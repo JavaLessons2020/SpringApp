@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="toyota" class="car.Toyota">
+        <property name="name" value="Rav"/>
+        <property name="price" value="12000"/>
+        <property name="map">
+            <map>
+                <entry key="Name1" value="100"/>
+                <entry key="Name2" value="200"/>
+                <entry key="Name3" value="300"/>
+            </map>
+        </property>
+
+        <property name="strings">
+            <list>
+                <value>first</value>
+                <value>second</value>
+                <value>third</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean name="car" class="car.BuyCarImp">
+<!-- <property name="myNewCar" ref="toyota"/>&lt;!&ndash;setCar&ndash;&gt;-->
+    <constructor-arg ref="toyota"/>
+
+    </bean>
+</beans>
